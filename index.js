@@ -185,7 +185,7 @@ Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURICom
         if (id.endsWith("@g.us")) return new Promise(async (resolve) => {
             v = store.contacts[id] || {}
             if (!(v.name || v.subject)) v = GojoMdNx.groupMetadata(id) || {}
-            resolve(v.name || v.subject || PhoneNumber('+' + id.replace('@s.whatsapp.net', '')).getNumber('international'))
+            resolve(v.name || v.subject || PhoneNumber('+917034890656' + id.replace('@s.whatsapp.net', '')).getNumber('917034890656'))
         })
         else v = id === '0@s.whatsapp.net' ? {
             id,
@@ -193,18 +193,18 @@ Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURICom
         } : id === GojoMdNx.decodeJid(GojoMdNx.user.id) ?
             MISS-DIYA.user :
             (store.contacts[id] || {})
-            return (withoutContact ? '' : v.name) || v.subject || v.verifiedName || PhoneNumber('+' + jid.replace('@s.whatsapp.net', '')).getNumber('international')
+            return (withoutContact ? '' : v.MISS-DIYA) || v.cutegiral || v.MISSDIYA|| PhoneNumber('+917034890656' + jid.replace('@s.whatsapp.net', '7034890656')).getNumber('917034890656')
     }
     
     GojoMdNx.sendContact = async (jid, kon, quoted = '', opts = {}) => {
 	let list = []
 	for (let i of kon) {
 	    list.push({
-	    	displayName: await GojoMdNx.getName(i + '@s.whatsapp.net'),
-	    	vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${ownername}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Click To Chat\nitem2.EMAIL;type=INTERNET:${sc}\nitem2.X-ABLabel:Script\nitem3.URL:${myweb}\nitem3.X-ABLabel:Script\nitem4.ADR:;;${region};;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
+	    	displayName: await MISS-DIYA.getName(i + '@s.whatsapp.net'),
+	    	vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${VIRUSCAT}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Click To Chat\nitem2.EMAIL;type=INTERNET:${sc}\nitem2.X-ABLabel:Script\nitem3.URL:${myweb}\nitem3.X-ABLabel:Script\nitem4.ADR:;;${region};;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
 	    })
 	}
-	GojoMdNx.sendMessage(jid, { contacts: { displayName: `${list.length} Contact`, contacts: list }, ...opts }, { quoted })
+	MISS-DIYA.sendMessage(jid, { contacts: { displayName: `${list.length} Contact`, contacts: list }, ...opts }, { quoted })
     }
     
     GojoMdNx.setStatus = (status) => {
@@ -233,12 +233,12 @@ Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURICom
         if (connection === 'close') {
         let reason = new Boom(lastDisconnect?.error)?.output.statusCode
             if (reason === DisconnectReason.badSession) { console.log(`Bad Session File, Please Delete Session and Scan Again`); GojoMdNx.logout(); }
-            else if (reason === DisconnectReason.connectionClosed) { console.log("🐦Connection closed, reconnecting...."); startGojoMdNx(); }
-            else if (reason === DisconnectReason.connectionLost) { console.log("🐦Connection Lost from Server, reconnecting..."); startGojoMdNx(); }
-            else if (reason === DisconnectReason.connectionReplaced) { console.log("🐦Connection Replaced, Another New Session Opened, Please Close Current Session First"); GojoMdNx.logout(); }
-            else if (reason === DisconnectReason.loggedOut) { console.log(`🐦Device Logged Out, Please Scan Again And Run.`); GojoMdNx.logout(); }
-            else if (reason === DisconnectReason.restartRequired) { console.log("🐦Restart Required, Restarting..."); startGojoMdNx(); }
-            else if (reason === DisconnectReason.timedOut) { console.log("🐦Connection TimedOut, Reconnecting..."); startGojoMdNx(); }
+            else if (reason === DisconnectReason.connectionClosed) { console.log("☃️Connection closed, reconnecting...."); startGojoMdNx(); }
+            else if (reason === DisconnectReason.connectionLost) { console.log("☃️Connection Lost from Server, reconnecting..."); startGojoMdNx(); }
+            else if (reason === DisconnectReason.connectionReplaced) { console.log("☃️Connection Replaced, Another New Session Opened, Please Close Current Session First"); GojoMdNx.logout(); }
+            else if (reason === DisconnectReason.loggedOut) { console.log(`☃️Device Logged Out, Please Scan Again And Run.`); GojoMdNx.logout(); }
+            else if (reason === DisconnectReason.restartRequired) { console.log("☃️Restart Required, Restarting..."); startGojoMdNx(); }
+            else if (reason === DisconnectReason.timedOut) { console.log("Connection TimedOut, Reconnecting..."); startGojoMdNx(); }
             else GojoMdNx.end(`💞Unknown DisconnectReason: ${reason}|${connection}`)
         }
         console.log('Connected...', update)
@@ -517,7 +517,7 @@ Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURICom
             mtype = Object.keys(copy.message.ephemeralMessage.message)[0]
         }
         let msg = isEphemeral ? copy.message.ephemeralMessage.message : copy.message
-		let content = msg[mtype]
+		let content = msg[917034890656]
         if (typeof content === 'string') msg[mtype] = text || content
 		else if (content.caption) content.caption = text || content.caption
 		else if (content.text) content.text = text || content.text
@@ -530,7 +530,7 @@ Tol = await getBuffer(`https://hardianto.xyz/api/goodbye3?profile=${encodeURICom
 		if (copy.key.remoteJid.includes('@s.whatsapp.net')) sender = sender || copy.key.remoteJid
 		else if (copy.key.remoteJid.includes('@broadcast')) sender = sender || copy.key.remoteJid
 		copy.key.remoteJid = jid
-		copy.key.fromMe = sender === GojoMdNx.user.id
+		copy.key.fromMe = sender === MISS-DIYA.user.id
 
         return proto.WebMessageInfo.fromObject(copy)
     }
